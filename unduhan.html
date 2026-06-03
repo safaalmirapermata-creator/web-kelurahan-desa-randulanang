@@ -1,0 +1,114 @@
+</html>
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Desa Randulanang – Unduhan</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <header>
+    <div class="header-inner">
+      <img src="assets/img/logo.desa.png" alt="Logo Desa" class="logo" onerror="this.style.display='none'">
+      <div class="site-title">
+        <span class="desa">DESA RANDULANANG</span>
+        <span class="sub">Kec. Jatinom · Kab. Klaten · Jawa Tengah</span>
+      </div>
+    </div>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="profil.html">Profil</a>
+      <a href="galeri.html">Galeri</a>
+      <a href="unduhan.html" class="active">Unduhan</a>
+    </nav>
+  </header>
+
+  <main>
+    <div class="page-header">
+      <h2>Unduhan</h2>
+      <p>Flyer event dan dokumen pengumuman resmi desa</p>
+    </div>
+
+    <div class="section">
+
+      <h3>Flyer Event Desa</h3>
+      <div class="unduh-list">
+        <div class="unduh-item">
+          <div class="unduh-icon">🖼️</div>
+          <div class="unduh-info">
+            <div class="title">Flyer Event Sadranan 25 Ruwah</div>
+            <div class="desc">Desain flyer promosi event tahunan desa · Format PNG</div>
+          </div>
+          <button class="btn-dl" data-file="assets/img/FLAYER 1.png" data-name="FLAYER 1.png" data-icon="🖼️">
+            ⬇ Unduh PNG
+          </button>
+        </div>
+      </div>
+
+      <h3 style="margin-top:2rem">Dokumen Pengumuman</h3>
+      <div class="unduh-list">
+        <div class="unduh-item">
+          <div class="unduh-icon">📄</div>
+          <div class="unduh-info">
+            <div class="title">Pengumuman Resmi Desa</div>
+            <div class="desc">Dokumen pengumuman kegiatan dan informasi desa · Format PDF</div>
+          </div>
+          <button class="btn-dl" data-file="assets/surat/SURAT PEMBERITAHUAN.pdf" data-name="SURAT PEMBERITAHUAN.pdf" data-icon="📄">
+            ⬇ Unduh PDF
+          </button>
+        </div>
+      </div>
+
+    </div>
+  </main>
+
+  <footer>
+    <p>© 2025 Desa Randulanang · Kecamatan Jatinom · Kabupaten Klaten</p>
+  </footer>
+
+  <script>
+    // Ambil semua tombol unduh
+    document.querySelectorAll(".btn-dl").forEach(function(btn) {
+      btn.addEventListener("click", function() {
+        var filePath = this.getAttribute("data-file");
+        var fileName = this.getAttribute("data-name");
+
+        // STEP 1: Tampilkan alert konfirmasi SEBELUM mengunduh
+        var konfirmasi = confirm("📥 File akan diunduh:\n\n" + fileName + "\n\nKlik OK untuk mengunduh, atau Batal untuk membatalkan.");
+
+        // STEP 2: Hanya unduh jika user klik OK
+        if (!konfirmasi) return;
+
+        // STEP 3: Fetch file lalu paksa unduhan via Blob
+        // Setiap klik tombol = 1 unduhan baru (bisa berkali-kali)
+        fetch(filePath)
+          .then(function(response) {
+            if (!response.ok) {
+              alert("❌ File tidak ditemukan!\nPastikan file ada di:\n" + filePath);
+              throw new Error("File tidak ditemukan");
+            }
+            return response.blob();
+          })
+          .then(function(blob) {
+            var blobURL = URL.createObjectURL(blob);
+            var link = document.createElement("a");
+            link.href = blobURL;
+            link.download = fileName; // Nama file saat tersimpan
+            document.body.appendChild(link);
+            link.click();
+            document.body.removeChild(link);
+            // Tunda revoke agar unduhan sempat dimulai
+            setTimeout(function() { URL.revokeObjectURL(blobURL); }, 3000);
+          })
+          .catch(function(err) {
+            alert("❌ Gagal mengunduh.\nGunakan Live Server atau GitHub Pages agar fetch() bisa berjalan.\n\nError: " + err.message);
+          });
+      });
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,141 @@
+<!doctype html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Desa Randulanang – Galeri</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Lato:wght@300;400;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <header>
+      <div class="header-inner">
+        <img
+          src="assets/img/logo.desa.png"
+          alt="Logo Desa"
+          class="logo"
+          onerror="this.style.display = 'none'"
+        />
+        <div class="site-title">
+          <span class="desa">DESA RANDULANANG</span>
+          <span class="sub">Kec. Jatinom · Kab. Klaten · Jawa Tengah</span>
+        </div>
+      </div>
+      <nav>
+        <a href="index.html">Home</a>
+        <a href="profil.html">Profil</a>
+        <a href="galeri.html" class="active">Galeri</a>
+        <a href="unduhan.html">Unduhan</a>
+      </nav>
+    </header>
+
+    <main>
+      <div class="page-header">
+        <h2>Galeri</h2>
+        <p>Dokumentasi kegiatan dan potensi Desa Randulanang</p>
+      </div>
+
+      <div class="section">
+        <h3>Kegiatan Desa</h3>
+        <div class="galeri-grid" id="galeri-kegiatan">
+          <!-- Tambahkan gambar dengan mengganti src -->
+          <div class="galeri-item">
+            <img
+              src="assets/img/kenri.jpeg"
+              alt="Kegiatan 1"
+              onerror="
+                this.parentElement.innerHTML =
+                  '<div class=\'galeri-placeholder\'>🏘️</div><div class=\'caption\'>Kenduri Desa</div>'
+              "
+            />
+            <div class="caption">Kenduri Desa</div>
+          </div>
+
+          <div class="galeri-item">
+            <img
+              src="assets/img/sadranan wayang.jpeg"
+              alt="Kegiatan 2"
+              onerror="
+                this.parentElement.innerHTML =
+                  '<div class=\'galeri-placeholder\'>🎉</div><div class=\'caption\'>Sadranan</div>'
+              "
+            />
+            <div class="caption">Sadranan</div>
+          </div>
+
+          <div class="galeri-item">
+            <img
+              src="assets/img/panen raya.jpeg"
+              alt="Kegiatan 3"
+              onerror="
+                this.parentElement.innerHTML =
+                  '<div class=\'galeri-placeholder\'>🌾</div><div class=\'caption\'>Panen Raya</div>'
+              "
+            />
+            <div class="caption">Panen Raya</div>
+          </div>
+
+          <div class="galeri-item">
+            <img
+              src="assets/img/Sinoman.jpeg"
+              alt="Kegiatan 4"
+              onerror="
+                this.parentElement.innerHTML =
+                  '<div class=\'galeri-placeholder\'>📚</div><div class=\'caption\'>Kegiatan Sinoman</div>'
+              "
+            />
+            <div class="caption">Kegiatan Sinoman</div>
+          </div>
+
+          <div class="galeri-item">
+            <img
+              src="assets/img/gejog lesung.jpeg"
+              alt="Kegiatan 5"
+              onerror="
+                this.parentElement.innerHTML =
+                  '<div class=\'galeri-placeholder\'>🛖</div><div class=\'caption\'>Kesenian Gejog Lesung</div>'
+              "
+            />
+            <div class="caption">Kesenian Gejog Lesung</div>
+          </div>
+
+          <div class="galeri-item">
+            <img
+              src="assets/img/pentas ketoprak.jpeg"
+              alt="Kegiatan 6"
+              onerror="
+                this.parentElement.innerHTML =
+                  '<div class=\'galeri-placeholder\'>🎭</div><div class=\'caption\'>Pentas Seni Budaya Ketoprak</div>'
+              "
+            />
+            <div class="caption">Pentas Seni Budaya Ketoprak</div>
+          </div>
+        </div>
+
+        <p
+          style="
+            margin-top: 1.5rem;
+            font-size: 0.85rem;
+            color: var(--text-muted);
+          "
+        >
+          💡
+          <em
+            >Beberapa contoh agenda atau kegiatan desa Randulanang</em
+          >
+        </p>
+      </div>
+    </main>
+
+    <footer>
+      <p>© 2025 Desa Randulanang · Kecamatan Jatinom · Kabupaten Klaten</p>
+    </footer>
+
+    <script src="main.js"></script>
+    <script src="main.js"></script>
+  </body>
+</html>
